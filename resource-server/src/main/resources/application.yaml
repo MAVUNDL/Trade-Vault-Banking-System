@@ -1,0 +1,30 @@
+spring:
+  application:
+    name: resource-server
+
+  datasource:
+    url: ${DATABASE_URL}
+    username: ${DATABASE_USERNAME}
+    password: ${DATABASE_PASSWORD}
+  batch:
+    job:
+      enabled: false
+    sql:
+      init:
+        mode: always
+
+    flyway:
+      baseline-on-migrate: true
+
+  pb:
+    client-id: ${PB_CLIENT_ID}
+    secret: ${PB_SECRET}
+    api-key: ${PB_API_KEY}
+
+  cib:
+    client-id: ${CIB_CLIENT_ID}
+    secret: ${CIB_SECRET}
+    api-key: ${CIB_API_KEY}
+
+server:
+  port: 8080

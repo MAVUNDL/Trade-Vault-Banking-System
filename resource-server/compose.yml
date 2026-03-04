@@ -1,0 +1,10 @@
+services:
+  postgres:
+    image: postgres:latest
+    container_name: trade-vault-postgres
+    environment:
+      POSTGRES_DB: trade_vault
+      POSTGRES_USER: sgaxamabhande
+      POSTGRES_PASSWORD: sgaxabembe
+    ports:
+      - "5433:5432"
