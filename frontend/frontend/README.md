@@ -12,8 +12,23 @@ The frontend is a single-page dashboard application serving Investec Private Ban
 - **Beneficiaries** — Manage saved payment recipients and execute EFT payments
 - **Opportunities** — Browse corporate importers and their active shipments available for funding
 - **My Portfolio** — Track active and historical shipment investments
-
 Authentication is handled via JWT tokens with automatic silent refresh — the session persists until the refresh token expires (7 days).
+
+## View Screenshots
+<details>
+  <summary>Click to expand screenshots</summary>
+  <br>
+
+  <img src="https://github.com/user-attachments/assets/6dfa6c78-433b-453b-b18e-dcacaa4f2278" width="100%"/>
+  <br><br>
+  <img src="https://github.com/user-attachments/assets/8fe6211e-4884-441b-9241-2cfb5f8dc663" width="100%"/>
+  <br><br>
+  <img src="https://github.com/user-attachments/assets/9af2d0b3-7141-4299-bc81-8a14fa179fd3" width="100%"/>
+  <br><br>
+  <img src="https://github.com/user-attachments/assets/46b2bda7-fa7b-49d7-9c75-b2b2202c5b8d" width="100%"/>
+  <br><br>
+  <img src="https://github.com/user-attachments/assets/4604cf2d-8421-4638-b4d9-3be52d12f712" width="100%"/>
+</details>
 
 ---
 
