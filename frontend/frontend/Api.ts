@@ -1,4 +1,4 @@
-const BASE_URL = "http://localhost:8080/api/v1";
+const BASE_URL = "https://skhumbuzo-software-engineering-projects.site/api/v1";
 
 // ── Utility Functions ────────────────────────────────────────────────────────
 

@@ -64,7 +64,7 @@ export default function Register() {
 
         try {
             // 2. Send the auto-generated ID to your backend
-            const res = await fetch("http://localhost:8080/api/auth/register", {
+            const res = await fetch("https://skhumbuzo-software-engineering-projects.site/api/auth/register", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({
