@@ -16,15 +16,5 @@ spring:
     flyway:
       baseline-on-migrate: true
 
-  pb:
-    client-id: ${PB_CLIENT_ID}
-    secret: ${PB_SECRET}
-    api-key: ${PB_API_KEY}
-
-  cib:
-    client-id: ${CIB_CLIENT_ID}
-    secret: ${CIB_SECRET}
-    api-key: ${CIB_API_KEY}
-
 server:
   port: 8080

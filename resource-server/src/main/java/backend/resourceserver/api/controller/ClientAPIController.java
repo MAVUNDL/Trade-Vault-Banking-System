@@ -127,7 +127,7 @@ public class ClientAPIController {
     }
 
     @DeleteMapping("/accounts/delete-account/{accountId}")
-    @PreAuthorize("hasRole('ADMIN')")
+    @PreAuthorize("hasAnyRole('ADMIN')")
     public ResponseEntity<?> deleteAccount(@PathVariable String accountId, @AuthenticationPrincipal UserEntity user) {
         return accountService.removeAccount(accountId, user.getProfileId());
     }
@@ -208,31 +208,31 @@ public class ClientAPIController {
     }
 
     @PostMapping("/companies/create-new-company")
-    @PreAuthorize("hasRole('ADMIN')")
+    @PreAuthorize("hasAnyRole('ADMIN')")
     public ResponseEntity<?> createNewCompany(@RequestBody Company_Entity company) {
         return companyService.createNewCompany(company);
     }
 
     @DeleteMapping("/companies/delete-company/{companyId}")
-    @PreAuthorize("hasRole('ADMIN')")
+    @PreAuthorize("hasAnyRole('ADMIN')")
     public ResponseEntity<?> deleteCompany(@PathVariable String companyId) {
         return companyService.removeCompany(companyId);
     }
 
     @GetMapping("/companies/company/{companyId}/financials")
-    @PreAuthorize("hasRole('ADMIN')")
+    @PreAuthorize("hasAnyRole('ADMIN')")
     public ResponseEntity<?> getCompanyFinancials(@PathVariable String companyId) {
         return companyFinancialsService.retrieveAllCompanyFinancialsForCompanyId(companyId);
     }
 
     @PostMapping("/companies/company/add-new-financials")
-    @PreAuthorize("hasRole('ADMIN')")
+    @PreAuthorize("hasAnyRole('ADMIN')")
     public ResponseEntity<?> addNewCompanyFinancials(@RequestBody CompanyFinancials_Entity companyFinancials) {
         return companyFinancialsService.insertNewCompanyFinancial(companyFinancials);
     }
 
     @PostMapping("/companies/company/{companyId}/update-financials")
-    @PreAuthorize("hasRole('ADMIN')")
+    @PreAuthorize("hasAnyRole('ADMIN')")
     public ResponseEntity<?> updateCompanyFinancials(@PathVariable String companyId, @RequestBody BigDecimal amount) {
         return companyFinancialsService.updateCompanyBalance(companyId, amount);
     }
@@ -245,49 +245,49 @@ public class ClientAPIController {
     }
 
     @PostMapping("/companies/company/shipments/shipment/new-shipment")
-    @PreAuthorize("hasRole('ADMIN')")
+    @PreAuthorize("hasAnyRole('ADMIN')")
     public ResponseEntity<?> addNewShipment(@RequestBody Shipment_Entity shipment) {
         return shipmentService.insertNewShipment(shipment);
     }
 
     @DeleteMapping("/companies/company/{companyOwner}/shipments/shipment/{shipmentNo}/delete-shipment")
-    @PreAuthorize("hasRole('ADMIN')")
+    @PreAuthorize("hasAnyRole('ADMIN')")
     public ResponseEntity<?> deleteShipment(@PathVariable String companyOwner,@PathVariable String shipmentNo){
         return shipmentService.removeShipmentByShipmentNumber(companyOwner, shipmentNo);
     }
 
     @DeleteMapping("/companies/company/{companyOwner}/shipments/delete-shipments")
-    @PreAuthorize("hasRole('ADMIN')")
+    @PreAuthorize("hasAnyRole('ADMIN')")
     public ResponseEntity<?> deleteAllShipments(@PathVariable String companyOwner){
         return shipmentService.removeAllShipmentsForCompany(companyOwner);
     }
 
     @GetMapping("/companies/company/{companyId}/shipments/funding")
-    @PreAuthorize("hasRole('ADMIN')")
+    @PreAuthorize("hasAnyRole('USER','ADMIN')")
     public ResponseEntity<?> getAllCompanyShipmentFundings(@PathVariable String companyId){
         return shipmentFundingService.retrieveAllShipmentFundingForCompanyId(companyId);
     }
 
     @GetMapping("/companies/company/{companyId}/shipments/{shipmentId}/funding/")
-    @PreAuthorize("hasRole('ADMIN')")
+    @PreAuthorize("hasAnyRole('USER','ADMIN')")
     public ResponseEntity<?> getShipmentFundingLinkedToCompany(@PathVariable String companyId, @PathVariable String shipmentId){
         return shipmentFundingService.retrieveShipmentFundingByShipmentId(companyId, shipmentId);
     }
 
     @PostMapping("/companies/company/shipments/record-new-funding")
-    @PreAuthorize("hasRole('ADMIN')")
+    @PreAuthorize("hasAnyRole('USER','ADMIN')")
     public ResponseEntity<?> addNewShipmentFunding(@RequestBody ShipmentFunding_Entity shipmentFunding) {
         return shipmentFundingService.createNewShipmentFunding(shipmentFunding);
     }
 
     @PostMapping("/companies/company/{companyId}/shipments/{shipmentId}/add-funding")
-    @PreAuthorize("hasRole('ADMIN')")
+    @PreAuthorize("hasAnyRole('USER','ADMIN')")
     public ResponseEntity<?> addFundingToShipment(@PathVariable String companyId,@PathVariable String shipmentId, @RequestBody BigDecimal fundingAmount){
         return shipmentFundingService.addFundingToShipment(companyId, shipmentId, fundingAmount);
     }
 
     @PostMapping("/investments/deploy")
-    @PreAuthorize("hasAuthority('USER')")
+    @PreAuthorize("hasAnyRole('USER')")
     @Transactional // Rolls back ONLY if a RuntimeException is thrown
     public ResponseEntity<?> deployCapitalToShipment(
             @RequestBody DeployCapitalRequest request,
