@@ -447,12 +447,6 @@ curl -X POST http://localhost:8080/api/auth/login \
 | `DATABASE_USERNAME` | ✅ | PostgreSQL username |
 | `DATABASE_PASSWORD` | ✅ | PostgreSQL password |
 | `JWT_SECRET_KEY` | ✅ | HMAC signing secret — minimum 32 characters |
-| `PB_CLIENT_ID` | ✅ | Investec Private Banking OAuth client ID |
-| `PB_SECRET` | ✅ | Investec PB OAuth secret |
-| `PB_API_KEY` | ✅ | Investec PB API key |
-| `CIB_CLIENT_ID` | ✅ | Investec CIB OAuth client ID |
-| `CIB_SECRET` | ✅ | Investec CIB OAuth secret |
-| `CIB_API_KEY` | ✅ | Investec CIB API key |
 
 ---
 
