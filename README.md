@@ -1,5 +1,8 @@
 # Trade Vault — P2P Supply Chain Finance Platform
 
+<img width="1890" height="902" alt="image" src="https://github.com/user-attachments/assets/cf571823-fb9c-4e8d-bba8-813a127aa5ec" />
+
+
 > A peer-to-peer supply chain financing platform that turns live shipment data into investable collateral — connecting Investec Private Banking clients with corporate importers via a real-time shadow ledger architecture.
 
 Built on **Java 25 + Spring Boot 4**, **Next.js**, and **PostgreSQL**, Trade Vault bridges the gap between idle private capital and working capital-hungry supply chains.
@@ -337,3 +340,4 @@ The login response returns `accessToken` and `refreshToken`. Pass the access tok
 **Profile-guarded endpoints** — Beneficiary and account endpoints verify that the authenticated user's `profileId` matches the requested resource, preventing horizontal privilege escalation between accounts.
 
 **Stateless JWT sessions** — No server-side session storage (`SessionCreationPolicy.STATELESS`). The entire authentication state lives in the JWT. The frontend handles token refresh transparently via the `apiFetch` wrapper in `Api.ts`.
+
