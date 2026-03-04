@@ -1,7 +1,28 @@
 # Trade Vault — P2P Supply Chain Finance Platform
 
-<img width="1890" height="902" alt="image" src="https://github.com/user-attachments/assets/cf571823-fb9c-4e8d-bba8-813a127aa5ec" />
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/cf571823-fb9c-4e8d-bba8-813a127aa5ec" width="95%" alt="Trade Vault Landing Page"/>
+</p>
 
+<p align="center">
+  <strong>Turn live shipment data into investable collateral.</strong><br/>
+  Connecting private capital with corporate importers through a real-time shadow ledger architecture.
+</p>
+
+---
+
+## 🔐 Authentication Flow
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/142bfb0d-720d-40c2-a9fb-a5b846207aff" width="48%" alt="Sign Up"/>
+  <img src="https://github.com/user-attachments/assets/85a95425-5989-43d9-a73d-5a718118e1cc" width="48%" alt="Sign In"/>
+</p>
+
+<p align="center">
+  Secure JWT-based registration and login with role-based access control.
+</p>
+
+---
 
 > A peer-to-peer supply chain financing platform that turns live shipment data into investable collateral — connecting Investec Private Banking clients with corporate importers via a real-time shadow ledger architecture.
 
